@@ -13,7 +13,7 @@ import (
  * }
  */
 
-func removeNthFromEnd(head *common.ListNode, n int) *common.ListNode {
+func removeNthFromEnd(head *common.ListNode[int], n int) *common.ListNode[int] {
 	if head == nil || head.Next == nil {
 		return nil
 	}

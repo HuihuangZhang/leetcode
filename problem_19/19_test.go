@@ -3,7 +3,7 @@ package problem_19
 import (
 	"testing"
 
-	"github.com/HuihuangZhang/leetcode/util"
+	"github.com/HuihuangZhang/leetcode/common"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -50,9 +50,9 @@ func TestRemoveNthFromEnd(t *testing.T) {
 	}
 
 	for _, c := range cases {
-		head := util.Arr2List(c.in.list)
-		head = removeNthFromEnd(head, c.in.n)
-		result := util.List2Arr(head)
-		assert.Equal(t, c.expect, result)
+		l := common.FromSlice(c.in.list)
+		head := removeNthFromEnd(l.Head, c.in.n)
+		resultL := common.List[int]{Head: head}
+		assert.Equal(t, c.expect, resultL.ToSlice())
 	}
 }
